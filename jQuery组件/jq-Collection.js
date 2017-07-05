@@ -1,21 +1,20 @@
-/* 
- * @Author: zhg
- * @Date:   2017-04-15 09:13:08
- * @Last Modified by:   anchen
- * @Last Modified time: 2017-07-05 22:23:01
- */
-;$(function(undefined) {
+(function (global, factory) {
+    typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
+    typeof define === 'function' && define.amd ? define(factory) :
+    (global.activeAssembly = factory());
+}(this, (function(){ 
+
+    'use strict';
 
     var activeAssembly = {
         dialog: {},
         _html: {},
         mask: {}
     };
-    window.activeAssembly = activeAssembly;
 
     var $window = $(window);
     var $body = $("body");
-
+    /*创建遮罩*/
     activeAssembly.mask.creatMask = function(item, id) {
         var _html = $("<div id='globalMarkDiv'>").css({
             "position": "absolute",
@@ -35,14 +34,14 @@
             "margin-top": (dynamicMarginTop - 20) + "px"
         })
     }
-
+    /*移除遮罩*/
     activeAssembly.mask.hidemask = function() {
         $("#globalMarkDiv").stop(true).fadeOut('fast');
         setTimeout(function() {
             $("#globalMarkDiv").remove();
         }, 300)
     }
-
+    /*拖拽元素*/
     activeAssembly.dragEffect = function(box, drag) {
         var top, left, disX, disY, flag = false;
         var clientW = $(box).width();
@@ -77,7 +76,7 @@
             }
         });
     }
-
+    /*迷你弹框*/
     activeAssembly.miniFrame = function(parameter) {
         var defaults = {
             prefix: "miniFrame",
@@ -124,6 +123,7 @@
             activeAssembly.dragEffect(dragTarget, ".drag-to")
         })
     }
+    /*密码验证弹框*/
     activeAssembly.passwordFrame = function() {
         return this.each(function() {
             var _html = '<div id="mark">' + '<div class="ope">' + '<p class="tid">输入密码</p>' + '<div class="jsip">' + '<label for="code">ow</label>' + '<input type="password" id="code"/>' + '<span class="eye">小</span>' + '</div>' + '<p class="btn">' + '<button class="success-btn">确定</button>' + '</p>' + '</div>' + '</div>';
@@ -139,6 +139,7 @@
             })
         })
     }
+    /*双时间选择弹框*/
     activeAssembly.timeFrame = function(element,callback) {
         return this.each(function() {
             
@@ -235,6 +236,7 @@
             })
         })
     }
+    /*弹框公共结构*/
     activeAssembly._html.dialogCommonHtml = function(message) {
         var params = {
             title: "标题",
@@ -256,6 +258,7 @@
         dialogCommonHtml += '<button id="okMethod">' + options.ok.name + '</button>' + '</p>' + '</div>' + '</div>';
         return dialogCommonHtml;
     }
+    /*alert 弹框*/
     activeAssembly.dialog.alert = function(message) {
         return this.each(function() {
             activeAssembly.mask.creatMask(activeAssembly._html.dialogCommonHtml(message), ".alert");
@@ -277,6 +280,7 @@
             })
         })
     }
+    /*tips 弹框*/
     activeAssembly.dialog.tips = function(message) {
         var _this = $(this),
             _width = _this.offset().left,
@@ -296,6 +300,7 @@
             })
         })
     }
+    /*短消息提示弹框*/
     activeAssembly.dialog.prompt = function(type, message) {
         return this.each(function() {
             var _html = $("<div id='promptDiv'>").html(message);
@@ -314,6 +319,7 @@
             }, 1000)
         })
     }
+    /*loading*/
     activeAssembly.dialog.loading = function(message) {
         return this.each(function() {
             var loadingBox = $("<div class='loadingBox'>");
@@ -322,6 +328,7 @@
             activeAssembly.mask.creatMask(_html, "#loadingMask");
         })
     }
+    /*大型弹框,加载页面时使用到jQuery的load方法*/
     activeAssembly.detailsFrame = function(params) {
         var defaults = {
             id: '', // id建议后缀增加字段 DF
@@ -420,6 +427,7 @@
             })
         })
     }
+    /*日历*/
     activeAssembly.calendar = function(parameter, getApi) {
         if (typeof parameter == 'function') {
             getApi = parameter;
@@ -702,6 +710,7 @@
             format(_data);
         });
     }
+    /*分页*/
     var creatPage = {
         init: function(obj, args) {
             return (function() {
@@ -762,7 +771,6 @@
                 }
             })();
         },
-        //绑定事件
         bindEvent: function(obj, args) {
             return (function() {
                 obj.on("click", "a.tcdNumber", function() {
@@ -775,7 +783,6 @@
                         args.backFn(current);
                     }
                 });
-                //上一页
                 obj.on("click", "a.prevPage", function() {
                     var current = parseInt(obj.children("span.currentPage").text());
                     creatPage.fillHtml(obj, {
@@ -786,7 +793,6 @@
                         args.backFn(current - 1);
                     }
                 });
-                //下一页
                 obj.on("click", "a.nextPage", function() {
                     var current = parseInt(obj.children("span.currentPage").text());
                     creatPage.fillHtml(obj, {
@@ -797,7 +803,6 @@
                         args.backFn(current + 1);
                     }
                 });
-                //去第几页
                 obj.on("blur", ".go-page", function() {
                     var current = parseInt($(".go-page").val());
                     if (isNaN(current)) {
@@ -825,6 +830,7 @@
             })();
         }
     };
+    /*暴露接口*/
     $.fn.extend({
         miniFrame: activeAssembly.miniFrame,
         passwordFrame: activeAssembly.passwordFrame,
@@ -844,6 +850,7 @@
         }, options);
         creatPage.init(this, args);
     };
+    /*小工具函数*/
     jQuery.extend({
          hOv:function(target,trigger,text){
              if(arguments.length && target && trigger){
@@ -870,4 +877,4 @@
          }
     })
          
-}())
+})));
