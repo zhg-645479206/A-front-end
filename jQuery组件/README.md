@@ -1,18 +1,29 @@
-> jQuery 组件，包含dialog,canlender,tips,loading,pages
+> jQuery 组件，包含dialog，canlender，tips，loading，pages，timeFrame，alert，confirm ...
 
-# dialog
+#### dialog
 
-confirm,alert,prompt,passwordFrame
+![](/images/dialog.png)
 
-# canlender
+#### alert
 
-支持时间范围,过去和未来日期选择,多选日期,高亮
+![](/images/alert.png)
 
-# tips
+#### canlender
 
-支持自定义信息，自定义位置
+可选时间范围（过去和未来），多选日期，阶段高亮
 
-# pages
+![](/images/canlender.png)
 
-日期跳转
+#### tips
 
+自定义信息，自定义位置
+
+![](/images/tips.png)
+
+#### pages
+
+![](/images/pages.png)
+
+#### timeFrame
+
+![](/images/timeFrame.png)
