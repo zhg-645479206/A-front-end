@@ -2,28 +2,28 @@
 
 #### dialog
 
-![](/images/dialog.png)
+![dialog](http://osmk5oivt.bkt.clouddn.com/dialog.png "dialog")
 
 #### alert
 
-![](/images/alert.png)
+![alert](http://osmk5oivt.bkt.clouddn.com/alert.png "alert")
 
 #### canlender
 
 可选时间范围（过去和未来），多选日期，阶段高亮
 
-![](/images/canlender.png)
+![canlender](http://osmk5oivt.bkt.clouddn.com/canlender.png "canlender")
 
 #### tips
 
 自定义信息，自定义位置
 
-![](/images/tips.png)
+![tips](http://osmk5oivt.bkt.clouddn.com/tips.png "tips")
 
 #### pages
 
-![](/images/pages.png)
+![pages](http://osmk5oivt.bkt.clouddn.com/pages.png "pages")
 
 #### timeFrame
 
-![](/images/timeFrame.png)
+![timeFare](http://osmk5oivt.bkt.clouddn.com/timeFrame.png "timeFare")
