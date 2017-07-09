@@ -1,41 +1,33 @@
 > jQuery 组件，包含dialog，canlender，tips，loading，pages，timeFrame，alert，confirm ...
 
-### dialog
-
-***
-
-![dialog](http://osmk5oivt.bkt.clouddn.com/dialog.png "dialog")
-
-### alert
-
-***
-
-![alert](http://osmk5oivt.bkt.clouddn.com/alert.png "alert")
-
 ### canlender
 
 ***
 
 可选时间范围（过去和未来），多选日期，阶段高亮
 
-![canlender](http://osmk5oivt.bkt.clouddn.com/canlender.png "canlender")
+![canlender](http://osmk5oivt.bkt.clouddn.com/canlender.gif "canlender")
 
-### tips
+### dialog
 
 ***
 
-自定义信息，自定义位置
+![dialog](http://osmk5oivt.bkt.clouddn.com/dialog.gif "dialog")
 
-![tips](http://osmk5oivt.bkt.clouddn.com/tips.png "tips")
+### alert
+
+***
+
+![alert](http://osmk5oivt.bkt.clouddn.com/alert.gif "alert")
 
 ### pages
 
 ***
 
-![pages](http://osmk5oivt.bkt.clouddn.com/pages.png "pages")
+![pages](http://osmk5oivt.bkt.clouddn.com/pages.gif "pages")
 
 ### timeFrame
 
 ***
 
-![timeFare](http://osmk5oivt.bkt.clouddn.com/timeFrame.png "timeFare")
+![timeFare](http://osmk5oivt.bkt.clouddn.com/timeframe.gif "timeFare")
