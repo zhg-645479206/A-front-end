@@ -1,9 +1,3 @@
-/* 
-* @Author: anchen
-* @Date:   2017-07-14 03:18:22
-* @Last Modified by:   anchen
-* @Last Modified time: 2017-07-14 03:19:06
-*/
 
 #include <stdio.h>
 
@@ -24,7 +18,7 @@ int main() {
             return m_pInstance;
         }
     };
-    
+
     return 0;
 }
 
