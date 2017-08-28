@@ -19,8 +19,6 @@ export function param(data) {
   for (var k in data) {
     let value = data[k] !== undefined ? data[k] : ''
     url += '&' + k + '=' + encodeURIComponent(value)
-    // encodeURIComponent 作用：可把字符串作为URI 组件进行编码。
-    // url += `&${k}=${encodeURIComponent(value)}`
   }
   return url ? url.substring(1) : ''
 }

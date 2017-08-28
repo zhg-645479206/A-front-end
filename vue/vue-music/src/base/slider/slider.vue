@@ -37,7 +37,6 @@
       }
     },
     mounted() {
-    // 保证dom完整加载->20毫秒的延时,浏览器刷新页面大约17毫秒。这里20毫秒是个经验值
       setTimeout(() => {
         this._setSliderWidth()
         this._initDots()
@@ -93,11 +92,10 @@
           snap: true,
           snapLoop: this.loop,
           snapThreshold: 0.3,
-          snapSpeed: 400,
-          click: true
+          snapSpeed: 400
         })
+
         this.slider.on('scrollEnd', () => {
-          // BScroll 插件会有getCurrentPage().pageX
           let pageIndex = this.slider.getCurrentPage().pageX
           if (this.loop) {
             pageIndex -= 1
